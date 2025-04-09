@@ -11,7 +11,7 @@ class HomePageView(ListView):
 class BlogView(ListView):
     model = Blog
     context_object_name = 'blogs'
-    template_name = 'blog.html'
+    template_name = 'portfolio/blog.html'
 
 class ArticleView(BlogView):
     def get_queryset(self):
