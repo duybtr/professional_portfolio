@@ -8,7 +8,7 @@ class Blog(models.Model):
         ('video', 'video')
     ]
 
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=200)
     category = models.CharField(max_length=20, choices=choices, default='app')
     link = models.CharField(max_length=200)
     description = models.CharField(max_length=2000, default='')
