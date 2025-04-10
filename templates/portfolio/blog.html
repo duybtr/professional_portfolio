@@ -2,7 +2,12 @@
 
 {% block content %}
     {% for blog in blogs %}
-    <a href="{{ blog.link }}">{{blog.title}}</a>
-    <p>{{blog.description}}</p>
+        <a href="{{ blog.link }}">{{blog.title}}</a>
+       
+        <p>{{blog.description}}
+            {% if blog.repo_link|length > 0 %}
+                <br />Link to repo: <a href="{{blog.repo_link}}">{{blog.repo_link}}</a>
+            {% endif %}
+        </p>
     {% endfor %}
 {% endblock content %}
