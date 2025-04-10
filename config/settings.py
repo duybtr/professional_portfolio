@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost','tranbaduy.com','www.tranbaduy.com']
 
 INSTALLED_APPS = [
     'portfolio',
+    'student',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
