@@ -8,6 +8,9 @@ from .models import Blog
 #     context_object_name = 'blogs'
 #     template_name = 'home.html'
 
+class AboutView(TemplateView):
+    template_name = 'portfolio/about.html'
+
 class BlogView(ListView):
     model = Blog
     context_object_name = 'blogs'

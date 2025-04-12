@@ -14,6 +14,7 @@
     <main> 
         <div class="main-menu">
             <span></span>
+            <a href="{% url 'about' %}">About</a>
             <a href="{% url 'get_projects' %}">Projects({{ project_count }})</a>
             <a href="{% url 'get_articles' %}">Articles({{ article_count }})</a>
             <a href="{% url 'get_videos' %}">Videos({{ video_count }})</a>
