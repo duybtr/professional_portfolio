@@ -11,19 +11,21 @@
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;"></svg>
        
-    <main> 
-        <div class="main-menu">
-            <span></span>
-            <a href="{% url 'about' %}">About</a>
-            <a href="{% url 'get_projects' %}">Projects({{ project_count }})</a>
-            <a href="{% url 'get_articles' %}">Articles({{ article_count }})</a>
-            <a href="{% url 'get_videos' %}">Videos({{ video_count }})</a>
-            <a href></a>
-            <a href></a>
-            <a href></a>
-            <a href></a>
-            <a href></a>
-        </div>
+    <main>
+        <div class="main-menu-container">
+          <div class="main-menu">
+            
+              <a class="{% if current_page == 'about' %}active{% endif %}" href="{% url 'about' %}">About</a>
+              <a class="{% if current_page == 'app' %}active{% endif %}" href="{% url 'get_projects' %}">Projects({{ project_count }})</a>
+              <a class="{% if current_page == 'article' %}active{% endif %}" href="{% url 'get_articles' %}">Articles({{ article_count }})</a>
+              <a class="{% if current_page == 'video' %}active{% endif %}" href="{% url 'get_videos' %}">Videos({{ video_count }})</a>
+              <a href></a>
+              <a href></a>
+              <a href></a>
+              <a href></a>
+              
+          </div>
+        </div> 
        
         <div class="c-example-divider"></div>
         

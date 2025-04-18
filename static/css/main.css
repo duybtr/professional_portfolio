@@ -1,12 +1,37 @@
 main {
     display: grid;
     grid-template-rows: 30px 5px auto;
+    height: 1000px;
+}
+
+.main-menu-container {
+    background-color: #495057;
+    color: white;
+    padding-left: 250px;
+    padding-right: 250px;
 }
 
 .main-menu {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
+    grid-template-columns: repeat(8, 1fr);
 }
+.main-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.main-menu a:hover {
+    font-size:large;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.main-menu .active{
+    font-size:large;
+    font-weight:bold;
+}
+
 
 .c-example-divider {
     height: 5px;
@@ -17,6 +42,8 @@ main {
 }
 
 .content {
+    background-color: #1b1f22;
+    color: white;
     padding-left: 250px;
     padding-right: 250px;
 }

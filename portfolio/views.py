@@ -10,6 +10,11 @@ from .models import Blog
 
 class AboutView(TemplateView):
     template_name = 'portfolio/about.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_page'] = 'about'
+        return context 
+
 
 class BlogView(ListView):
     model = Blog
@@ -19,11 +24,23 @@ class BlogView(ListView):
 class ArticleView(BlogView):
     def get_queryset(self):
         return Blog.objects.filter(category='article')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_page'] = 'article'
+        return context 
 
 class ProjectView(BlogView):
     def get_queryset(self):
         return Blog.objects.filter(category='app')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_page'] = 'app'
+        return context 
 
 class VideoView(BlogView):
     def get_queryset(self):
         return Blog.objects.filter(category='video')
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['current_page'] = 'video'
+        return context 
