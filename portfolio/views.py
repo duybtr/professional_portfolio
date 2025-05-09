@@ -44,3 +44,9 @@ class VideoView(BlogView):
         context = super().get_context_data(**kwargs)
         context['current_page'] = 'video'
         return context 
+
+def get_screenshot(request, blog_pk):
+    blog = Blog.objects.get(pk=blog_pk)
+    context = {}
+    context['blog'] = blog
+    return render(request, 'portfolio/partial/screenshot_modal.html', context) 

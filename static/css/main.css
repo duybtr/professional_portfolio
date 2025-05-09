@@ -50,3 +50,12 @@ main {
 .content a {
     color: rgba(110, 168, 254);
 }
+.symbol {
+    text-decoration: none;
+}
+.bi {
+    fill: white
+}
+.student .bi {
+    fill: black
+}
