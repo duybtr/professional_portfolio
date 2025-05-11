@@ -2,14 +2,22 @@
 
 {% block content %}
     <div id="screenshot_modal" class="modal modal-blur fade">
-        <div id="transaction_modal_dialog" class="modal-dialog"></div>
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">  
+                    <img id="screenshot_img" src="" />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>  
     </div>
 
     {% for blog in blogs %}
         {% if blog.screenshot_url|length > 0 %}
         <a href="#"
-        hx-target="#screenshot_modal" 
-        hx-get="{% url 'get_screenshot' blog.pk %}"
+        onclick="document.querySelector('#screenshot_img').src='{{blog.screenshot_url}}'"
         data-bs-toggle="modal"
         data-bs-target="#screenshot_modal">{{blog.title}} </a>
        
