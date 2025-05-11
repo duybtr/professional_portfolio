@@ -21,12 +21,12 @@ class BlogView(ListView):
     context_object_name = 'blogs'
     template_name = 'portfolio/blog.html'
 
-class ArticleView(BlogView):
+class TutorialView(BlogView):
     def get_queryset(self):
-        return Blog.objects.filter(category='article')
+        return Blog.objects.filter(category='tutorial')
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['current_page'] = 'article'
+        context['current_page'] = 'tutorial'
         return context 
 
 class ProjectView(BlogView):
@@ -35,14 +35,6 @@ class ProjectView(BlogView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['current_page'] = 'app'
-        return context 
-
-class VideoView(BlogView):
-    def get_queryset(self):
-        return Blog.objects.filter(category='video')
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['current_page'] = 'video'
         return context 
 
 def get_screenshot(request, blog_pk):

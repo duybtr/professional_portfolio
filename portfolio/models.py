@@ -4,8 +4,7 @@ from django.db import models
 class Blog(models.Model):
     choices = [
         ('app', 'app'),
-        ('article', 'article'),
-        ('video', 'video')
+        ('tutorial', 'tutorial'),
     ]
 
     title = models.CharField(max_length=200)
